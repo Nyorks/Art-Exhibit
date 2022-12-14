@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ART EXHIBIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Art Exhibit - Street Art.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="Art Exhibit - Street Art.html">Home</a></li>
+            <li><a href="About page - Art Exhibit.html">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="Contacts - Art Exhibit.html">Contacts</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <img src="art banner.png" id="banner">
+        <h2 id="text">KALYESERYE</h2>
+        <img src="person.png" id="person">
+        <img src="lamp.png" id="lamp">
+        <img src="lamp left.png" id="lampleft">
+    </section>
+   
+
+    <div class="sec">
+        <div class="row">
+            <div class="column" style="background-color: white;">
+                <h2>What is Street Art?</h2>
+        <p>A unique form of art that is only found in the streets It typically occurs in metropolitan settings and is generated on surfaces in public locations, including sidewalks, overpasses, and outside building walls. Street art is a common medium for expressing artworks that are either connected to politics or social issues or are just for fun. These encompass a variety, such as "3D wall," "sidewalk chalk art," "graffiti art," "stencil graffiti," "sticker art," and "street poster art." Thus, not all street art consists of painting.
+        </p>
+            </div>
+            <div class="column" style="background-color: black;">
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                      <img src="photo 3.jpg" style="width:75%;" id="img">
+                      <div class="text">KALYE</div>
+                    </div>
+                  
+                    <div class="mySlides fade">
+                      <img src="photo 2.jpg" style="width:75%">
+                      <div class="text">SERYE</div>
+                    </div>
+                  
+                    <div class="mySlides fade">
+                      <img src="photo 1.jpg" style="width:75%">
+                      <div class="text">ART</div>
+                    </div>
+                  
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  </div>
+                  <br>
+                  
+                  <!-- The dots/circles -->
+                  <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                  </div>
+            </div>
+          </div>
+
+    </div>
+
+    <script>
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+    </script>
+
+    <script>
+        let text = document.getElementById('text');
+        let person = document.getElementById('person');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            text.style.marginRight = value * 4 + 'px';
+            person.style.marginRight = value * 4 + 'px';
+        })
+    </script>
+
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        })
+    </script>
+
+</body>
+</html>
